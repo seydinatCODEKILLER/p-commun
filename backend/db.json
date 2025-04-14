@@ -154,7 +154,7 @@
   ],
   "etudiants": [
     {
-      "id_etudiant": 1,
+      "id_etudiant": "1",
       "id_utilisateur": 5,
       "matricule": "ET20230001",
       "date_inscription": "2023-09-01"
