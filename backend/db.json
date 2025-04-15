@@ -6,7 +6,8 @@
       "id_cours": 1,
       "date_absence": "2023-09-18",
       "heure_marquage": "2025-03-29 16:00:43",
-      "id_marqueur": 2
+      "id_marqueur": 2,
+      "id": "fa07"
     },
     {
       "id_absence": 2,
@@ -14,61 +15,72 @@
       "id_cours": 3,
       "date_absence": "2023-09-19",
       "heure_marquage": "2025-03-29 16:00:43",
-      "id_marqueur": 2
+      "id_marqueur": 2,
+      "id": "98b6"
     }
   ],
   "attaches": [
     {
       "id_attache": 1,
       "id_utilisateur": 4,
-      "date_nomination": "2023-02-01"
+      "date_nomination": "2023-02-01",
+      "id": "d53a"
     }
   ],
   "classes": [
     {
-      "id_classe": 1,
-      "libelle": "L1 Info",
-      "id_filiere": 1,
-      "id_niveau": 1,
-      "annee_scolaire": "2023-2024",
-      "capacite_max": 30,
-      "state": "disponible"
-    },
-    {
-      "id_classe": 2,
+      "id": "2",
       "libelle": "L2 Info",
       "id_filiere": 1,
-      "id_niveau": 2,
-      "annee_scolaire": "2023-2024",
-      "capacite_max": 30,
-      "state": "disponible"
+      "id_niveau": 2
     },
     {
-      "id_classe": 3,
+      "id": "3",
       "libelle": "L1 Maths",
       "id_filiere": 2,
-      "id_niveau": 1,
-      "annee_scolaire": "2023-2024",
-      "capacite_max": 25,
-      "state": "disponible"
+      "id_niveau": 1
     },
     {
-      "id_classe": 4,
-      "libelle": "L1 Designe",
-      "id_filiere": 1,
-      "id_niveau": 1,
-      "annee_scolaire": "2024-2025",
-      "capacite_max": 26,
-      "state": "disponible"
+      "libelle": "L3 Dev",
+      "id_niveau": "3",
+      "id_filiere": "3",
+      "id": "4"
     },
     {
-      "id_classe": 5,
-      "libelle": "L1 IA",
-      "id_filiere": 2,
-      "id_niveau": 3,
-      "annee_scolaire": "2024-2025",
-      "capacite_max": 10,
-      "state": "disponible"
+      "id": "6",
+      "libelle": "L2 Math",
+      "id_niveau": "2",
+      "id_filiere": "2"
+    },
+    {
+      "id": "7",
+      "libelle": "L3 Info",
+      "id_niveau": "3",
+      "id_filiere": "1"
+    },
+    {
+      "id": "8",
+      "libelle": "L2 Dev",
+      "id_niveau": "2",
+      "id_filiere": "3"
+    },
+    {
+      "id": "9",
+      "libelle": "L1 GL",
+      "id_niveau": "1",
+      "id_filiere": "4"
+    },
+    {
+      "libelle": "L1 Dev",
+      "id_niveau": "1",
+      "id_filiere": "3",
+      "id": "10"
+    },
+    {
+      "id": "11",
+      "libelle": "M1 Dev",
+      "id_niveau": "3",
+      "id_filiere": "3"
     }
   ],
   "classes_professeur": [
@@ -76,25 +88,29 @@
       "id_classe": 1,
       "id_professeur": 1,
       "date_affectation": "2023-09-01",
-      "est_principal": 1
+      "est_principal": 1,
+      "id": "33f5"
     },
     {
       "id_classe": 1,
       "id_professeur": 2,
       "date_affectation": "2023-09-01",
-      "est_principal": 0
+      "est_principal": 0,
+      "id": "a0e5"
     },
     {
       "id_classe": 2,
       "id_professeur": 1,
       "date_affectation": "2023-09-01",
-      "est_principal": 1
+      "est_principal": 1,
+      "id": "3b6a"
     },
     {
       "id_classe": 3,
       "id_professeur": 2,
       "date_affectation": "2023-09-01",
-      "est_principal": 1
+      "est_principal": 1,
+      "id": "5492"
     }
   ],
   "cours": [
@@ -109,7 +125,8 @@
       "nombre_heures": 2,
       "salle": "Salle A1",
       "statut": "planifié",
-      "date_creation": "2025-03-29 15:59:04"
+      "date_creation": "2025-03-29 15:59:04",
+      "id": "5374"
     },
     {
       "id_cours": 2,
@@ -122,7 +139,8 @@
       "nombre_heures": 2,
       "salle": "Salle A1",
       "statut": "planifié",
-      "date_creation": "2025-03-29 15:59:04"
+      "date_creation": "2025-03-29 15:59:04",
+      "id": "a133"
     },
     {
       "id_cours": 3,
@@ -135,21 +153,25 @@
       "nombre_heures": 2,
       "salle": "Salle B2",
       "statut": "planifié",
-      "date_creation": "2025-03-29 15:59:04"
+      "date_creation": "2025-03-29 15:59:04",
+      "id": "38e0"
     }
   ],
   "cours_classes": [
     {
       "id_cours": 1,
-      "id_classe": 1
+      "id_classe": 1,
+      "id": "94e6"
     },
     {
       "id_cours": 2,
-      "id_classe": 1
+      "id_classe": 1,
+      "id": "3b48"
     },
     {
       "id_cours": 3,
-      "id_classe": 3
+      "id_classe": 3,
+      "id": "4c7c"
     }
   ],
   "etudiants": [
@@ -157,35 +179,40 @@
       "id_etudiant": "1",
       "id_utilisateur": 5,
       "matricule": "ET20230001",
-      "date_inscription": "2023-09-01"
+      "date_inscription": "2023-09-01",
+      "id": "5711"
     },
     {
       "id_etudiant": 2,
       "id_utilisateur": 6,
       "matricule": "ET20230002",
-      "date_inscription": "2023-09-01"
+      "date_inscription": "2023-09-01",
+      "id": "5fe7"
     },
     {
       "id_etudiant": 3,
       "id_utilisateur": 7,
       "matricule": "ET20230003",
-      "date_inscription": "2023-09-01"
+      "date_inscription": "2023-09-01",
+      "id": "7b09"
     }
   ],
   "filieres": [
     {
-      "id_filiere": 1,
-      "libelle": "Informatique",
-      "description": "Développement et réseaux informatiques",
-      "date_creation": "2020-01-01",
-      "state": "disponible"
+      "id_filiere": "1",
+      "libelle": "Informatique"
     },
     {
-      "id_filiere": 2,
-      "libelle": "Mathématiques",
-      "description": "Mathématiques appliquées",
-      "date_creation": "2020-01-01",
-      "state": "disponible"
+      "id_filiere": "2",
+      "libelle": "Mathématiques"
+    },
+    {
+      "id_filiere": "3",
+      "libelle": "Développement"
+    },
+    {
+      "id_filiere": "4",
+      "libelle": "Génie Logiciel"
     }
   ],
   "inscriptions": [
@@ -196,7 +223,8 @@
       "annee_scolaire": "2023-2024",
       "date_inscription": "2023-09-01",
       "est_reinscription": 0,
-      "statut": "validée"
+      "statut": "validée",
+      "id": "b0ac"
     },
     {
       "id_inscription": 2,
@@ -205,7 +233,8 @@
       "annee_scolaire": "2023-2024",
       "date_inscription": "2023-09-01",
       "est_reinscription": 0,
-      "statut": "validée"
+      "statut": "validée",
+      "id": "c941"
     },
     {
       "id_inscription": 3,
@@ -214,7 +243,8 @@
       "annee_scolaire": "2023-2024",
       "date_inscription": "2023-09-02",
       "est_reinscription": 0,
-      "statut": "validée"
+      "statut": "validée",
+      "id": "bb7d"
     }
   ],
   "justifications": [
@@ -228,7 +258,8 @@
       "statut": "acceptée",
       "id_traitant": 4,
       "date_traitement": "2023-09-20 00:00:00",
-      "commentaire_traitement": null
+      "commentaire_traitement": null,
+      "id": "0c06"
     }
   ],
   "modules": [
@@ -239,7 +270,8 @@
       "description": null,
       "id_filiere": 1,
       "id_niveau": 1,
-      "nombre_heures_total": 60
+      "nombre_heures_total": 60,
+      "id": "8d07"
     },
     {
       "id_module": 2,
@@ -248,7 +280,8 @@
       "description": null,
       "id_filiere": 1,
       "id_niveau": 2,
-      "nombre_heures_total": 45
+      "nombre_heures_total": 45,
+      "id": "ba94"
     },
     {
       "id_module": 3,
@@ -257,24 +290,26 @@
       "description": null,
       "id_filiere": 2,
       "id_niveau": 1,
-      "nombre_heures_total": 50
+      "nombre_heures_total": 50,
+      "id": "2e74"
     }
   ],
   "niveaux": [
     {
       "id_niveau": 1,
-      "libelle": "Licence 1",
-      "state": "disponible"
+      "libelle": "Licence 1"
     },
     {
       "id_niveau": 2,
-      "libelle": "Licence 2",
-      "state": "disponible"
+      "libelle": "Licence 2"
     },
     {
       "id_niveau": 3,
-      "libelle": "Licence 3",
-      "state": "disponible"
+      "libelle": "Licence 3"
+    },
+    {
+      "id_niveau": 3,
+      "libelle": "Master 1"
     }
   ],
   "professeurs": [
@@ -283,39 +318,46 @@
       "id_utilisateur": 2,
       "specialite": "Informatique",
       "grade": "Professeur",
-      "date_embauche": "2020-09-01"
+      "date_embauche": "2020-09-01",
+      "id": "6503"
     },
     {
       "id_professeur": 2,
       "id_utilisateur": 3,
       "specialite": "Mathématiques",
       "grade": "Maître Assistant",
-      "date_embauche": "2021-10-15"
+      "date_embauche": "2021-10-15",
+      "id": "42a2"
     }
   ],
   "responsables_pedagogiques": [
     {
       "id_rp": 1,
       "id_utilisateur": 1,
-      "date_nomination": "2023-01-15"
+      "date_nomination": "2023-01-15",
+      "id": "d48f"
     }
   ],
   "roles": [
     {
       "id_role": 1,
-      "libelle": "RP"
+      "libelle": "RP",
+      "id": "245c"
     },
     {
       "id_role": 2,
-      "libelle": "Professeur"
+      "libelle": "Professeur",
+      "id": "018e"
     },
     {
       "id_role": 3,
-      "libelle": "Attache"
+      "libelle": "Attache",
+      "id": "e6ad"
     },
     {
       "id_role": 4,
-      "libelle": "Etudiant"
+      "libelle": "Etudiant",
+      "id": "d7e5"
     }
   ],
   "semestres": [
@@ -324,14 +366,16 @@
       "libelle": "Semestre 1",
       "date_debut": "2023-09-15",
       "date_fin": "2024-01-15",
-      "annee_scolaire": "2023-2024"
+      "annee_scolaire": "2023-2024",
+      "id": "fb1c"
     },
     {
       "id_semestre": 2,
       "libelle": "Semestre 2",
       "date_debut": "2024-02-01",
       "date_fin": "2024-06-30",
-      "annee_scolaire": "2023-2024"
+      "annee_scolaire": "2023-2024",
+      "id": "178f"
     }
   ],
   "utilisateurs": [
@@ -344,7 +388,8 @@
       "id_role": 1,
       "avatar": "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=600",
       "telephone": "771234567",
-      "adresse": "yeumbeul,comico"
+      "adresse": "yeumbeul,comico",
+      "id": "4847"
     },
     {
       "id_utilisateur": 2,
@@ -355,7 +400,8 @@
       "id_role": 2,
       "avatar": "profiles/prof_moussa.jpg",
       "telephone": "772345678",
-      "adresse": "yeumbeul,comico"
+      "adresse": "yeumbeul,comico",
+      "id": "fa73"
     },
     {
       "id_utilisateur": 3,
@@ -366,7 +412,8 @@
       "id_role": 2,
       "avatar": "profiles/prof_fatou.jpg",
       "telephone": "773456789",
-      "adresse": "yeumbeul,comico"
+      "adresse": "yeumbeul,comico",
+      "id": "a51c"
     },
     {
       "id_utilisateur": 4,
@@ -377,7 +424,8 @@
       "id_role": 3,
       "avatar": "profiles/attache_ibrahima.jpg",
       "telephone": "774567890",
-      "adresse": "yeumbeul,comico"
+      "adresse": "yeumbeul,comico",
+      "id": "de11"
     },
     {
       "id_utilisateur": 5,
@@ -388,7 +436,8 @@
       "id_role": 4,
       "avatar": "profiles/etud_aicha.jpg",
       "telephone": "775678901",
-      "adresse": "yeumbeul,comico"
+      "adresse": "yeumbeul,comico",
+      "id": "4356"
     },
     {
       "id_utilisateur": 6,
@@ -399,7 +448,8 @@
       "id_role": 4,
       "avatar": "profiles/etud_mamadou.jpg",
       "telephone": "776789012",
-      "adresse": "yeumbeul,comico"
+      "adresse": "yeumbeul,comico",
+      "id": "3520"
     },
     {
       "id_utilisateur": 7,
@@ -410,7 +460,8 @@
       "id_role": 4,
       "avatar": "profiles/etud_rokhaya.jpg",
       "telephone": "777890123",
-      "adresse": "yeumbeul,comico"
+      "adresse": "yeumbeul,comico",
+      "id": "d0dc"
     }
   ]
 }
