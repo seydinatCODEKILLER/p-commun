@@ -7,7 +7,7 @@ import {
     ouvrePopup,
     fermePopup,
     FormSubmit,
-    supprimerClass,
+    archiverClasse,
     modifierClasse,
       } from "../../../services/rpService.js";
       import { fetchData, } from "../../../services/apiService.js";
@@ -22,7 +22,7 @@ import {
         selectNiveau();
         listeClasses();
         selectFiliere();
-        supprimerClass();
+        archiverClasse();
         let overlay = document.querySelector(".overlay");
         let popup = document.querySelector("#formPopup");
         

@@ -15,14 +15,10 @@ export function sidebar() {
                 </a>
                 <a href="proff.html" class="sidebar-link flex items-center space-x-2 hover:text-gray-200" data-page="proff">
                 <i class="ri-user-add-line text-xl"></i>
-                <span>Créer un professeur</span>
+                <span>Professeur</span>
                 </a>
                 <a href="cours.html" class="sidebar-link flex items-center space-x-2 hover:text-gray-200" data-page="cours">
                 <i class="ri-calendar-event-line text-xl"></i>
-                <span>Planifier un cours</span>
-                </a>
-                <a href="#" class="sidebar-link flex items-center space-x-2 hover:text-gray-200">
-                <i class="ri-list-check-2 text-xl"></i>
                 <span>Cours planifiés</span>
                 </a>
             </nav>
@@ -71,12 +67,14 @@ export async function courbeCoursParProfs() {
   const cours = await fetchData("cours");
   const utilisateurs = await fetchData("utilisateurs");
   // Regrouper le nombre de cours par professeur
-  const dataParProf = professeurs.map((prof) => {
+  const dataParProf = professeurs  .filter(prof => prof.statut.toLowerCase() !== "archiver")
+  .map((prof) => {
+    
     const totalCours = cours.filter(
-      (c) => c.id_professeur === prof.id_professeur
+      (c) => c.id_professeur == prof.id
     ).length;
     const nomUser = utilisateurs.find(
-      (u) => u.id_utilisateur === prof.id_utilisateur
+      (u) => u.id == prof.id_utilisateur
     );
     return {
       nom: nomUser ? nomUser.nom : "Inconnu",
@@ -126,13 +124,14 @@ export async function courbeCoursParProfs() {
 }
 
 // courbes des cours par classe
-export async function courbeCoursParClasse(params) {
+export async function courbeCoursParClasse() {
   const classes = await fetchData("classes");
   const coursClasses = await fetchData("cours_classes");
 
-  const dataParClasse = classes.map((classe) => {
+  const dataParClasse =classes .filter(classe => classe.statut.toLowerCase() !== "archiver")
+   .map((classe) => {
     const totalCours = coursClasses.filter(
-      (cc) => cc.id_classe === classe.id_classe
+      (cc) => cc.id_classe == classe.id
     ).length;
     return {
       libelle: classe.libelle,
@@ -182,7 +181,8 @@ export async function courbeCoursParClasse(params) {
 // le nombre de classe
 export async function classeTotal() {
   const classe = await fetchData("classes");
-  const total = classe.length;
+  const total=classe.filter(c=>c.statut.toLowerCase()!=="archiver").length
+//   const total = classe.length;
   const totalClass = document.querySelector("#total_classe");
   totalClass.textContent = total;
 }
@@ -190,7 +190,7 @@ export async function classeTotal() {
 // le nombre de proff
 export async function ProfTotal() {
   const proff = await fetchData("professeurs");
-  const total = proff.length;
+  const total = proff.filter(p => p.statut.toLowerCase() !== "archiver").length;
   const totalProf = document.querySelector("#total_proff");
   totalProf.textContent = total;
 }
@@ -211,7 +211,8 @@ export async function listeClasses() {
   const end = start + itemsPerPage;
   const pageItems = classes.slice(start, end);
 
-  pageItems.forEach((c) => {
+  pageItems.forEach((c) =>  {
+    if (c.statut.toLowerCase() !== "archiver") {
     const niveauLibelle =
       niveaux.find((n) => n.id_niveau == c.id_niveau)?.libelle || "Inconnu";
     const filiereLibelle =
@@ -230,6 +231,7 @@ export async function listeClasses() {
           <p><span class="font-medium">Filière:</span> ${filiereLibelle}</p>
         </div>
       `;
+    }
   });
 
   renderPagination(classes.length); // afficher les boutons de pagination
@@ -277,9 +279,7 @@ export function supprimerClass() {
   });
 
   // Si OUI
-  document
-    .getElementById("confirmDelete")
-    .addEventListener("click", async () => {
+  document.getElementById("confirmDelete") .addEventListener("click", async () => {
       if (!idToDelete) return;
       await fetch(`http://localhost:3000/classes/${idToDelete}`, {
         method: "DELETE",
@@ -289,27 +289,42 @@ export function supprimerClass() {
       listeClasses();
     });
 }
+// archiver
+export function archiverClasse() {
+    let idToArchive = null;
+  
+    document.addEventListener("click", (e) => {
+      if (e.target.classList.contains("ri-delete-bin-6-line")) {
+        const card = e.target.closest("div");
+        idToArchive = card.dataset.id;
+        document.getElementById("confirmPopup").classList.remove("hidden");
+      }
+    });
+  
+    document.getElementById("cancelDelete").addEventListener("click", () => {
+      document.getElementById("confirmPopup").classList.add("hidden");
+      idToArchive = null;
+    });
+  
+    document.getElementById("confirmDelete").addEventListener("click", async () => {
+      if (!idToArchive) return;
+  
+      await fetch(`http://localhost:3000/classes/${idToArchive}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ statut: "archiver" })
+      });
+  
+      idToArchive = null;
+      document.getElementById("confirmPopup").classList.add("hidden");
+      listeClasses(); // Recharge les classes visibles
+    });
+  }
+  
 
-// Modification
-// export function modifierClasse() {
-//   document.addEventListener("click", async (e) => {
-//     if (e.target.classList.contains("edit-btn")) {
-//       const card = e.target.closest("div[data-id]");
-//       editingId = card.dataset.id;
-
-//       const data = await fetchData("classes", editingId);
-
-//       document.getElementById("libelle").value = data.libelle;
-//       document.getElementById("filiere").value = data.id_filiere;
-//       document.getElementById("niveau").value = data.id_niveau;
-
-//       submitBtn.innerText = "Modifier";
-
-//       document.querySelector(".overlay").classList.remove("hidden");
-//       document.getElementById("formPopup").classList.remove("hidden");
-//     }
-//   });
-// }
+// Modifier
 export function modifierClasse(overlay,popup) {
     document.addEventListener("click", async (e) => {
       if (e.target.classList.contains("edit-btn")) {
@@ -331,22 +346,25 @@ export function modifierClasse(overlay,popup) {
 // selectionner niveau
 export async function selectNiveau() {
   const niveaux = await fetchData("niveaux");
-  const niveauSelect = document.querySelector("#niveau");
-  niveauSelect.innerHTML =
-    `<option value="">Sélectionnez un niveau</option>` +
+  const niveauSelect = document.querySelectorAll(".niveau");
+  niveauSelect.forEach(select => {
+    select.innerHTML =    `<option value="">Sélectionnez un niveau</option>` +
     niveaux
       .map((n) => `<option value="${n.id_niveau}">${n.libelle}</option>`)
       .join("");
+  });
 }
 // selectionner filiere
 export async function selectFiliere() {
   const filiere = await fetchData("filieres");
-  const filiereSelect = document.querySelector("#filiere");
-  filiereSelect.innerHTML =
+  const filiereSelect = document.querySelectorAll(".filiere");
+  filiereSelect.forEach(fs => {
+    fs.innerHTML =
     `<option value="">Sélectionnez une filière</option>` +
     filiere
       .map((f) => `<option value="${f.id_filiere}">${f.libelle}</option>`)
       .join("");
+  });
 }
 
 //ouverture  popup formulaire
@@ -374,7 +392,6 @@ export async function genererId(classes) {
 // ajouter classe
 let editingId = null;
 const submitBtn = document.getElementById("submitBtn");
-// === GESTION DU FORMULAIRE ===
 export async function FormSubmit(e) {
   e.preventDefault();
 
@@ -395,6 +412,12 @@ export async function FormSubmit(e) {
 
   if (!libelle) {
     libelleError.textContent = "Champ requis*";
+    isValid = false;
+  }
+  const classes=await fetchData("classes")
+  const existe = classes.some(c => c.libelle.toLowerCase() == libelle.toLowerCase());
+  if (existe) {
+    libelleError.textContent = "Ce libellé existe déjà.";
     isValid = false;
   }
 
@@ -440,3 +463,4 @@ export async function FormSubmit(e) {
   listeClasses();
   return true;
 }
+

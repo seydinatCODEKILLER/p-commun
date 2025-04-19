@@ -17,6 +17,4 @@ ProfTotal,
     ProfTotal();
 
     handleNotifications();
-    console.log(await getAllEtudiants());
-    console.log(await getEtudiantById(1));
   });

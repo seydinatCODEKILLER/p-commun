@@ -32,90 +32,190 @@
       "id": "2",
       "libelle": "L2 Info",
       "id_filiere": 1,
-      "id_niveau": 2
+      "id_niveau": 2,
+      "statut": "en_cours"
     },
     {
       "id": "3",
       "libelle": "L1 Maths",
       "id_filiere": 2,
-      "id_niveau": 1
+      "id_niveau": 1,
+      "statut": "en_cours"
     },
     {
+      "id": "4",
       "libelle": "L3 Dev",
       "id_niveau": "3",
       "id_filiere": "3",
-      "id": "4"
+      "statut": "en_cours"
     },
     {
       "id": "6",
       "libelle": "L2 Math",
       "id_niveau": "2",
-      "id_filiere": "2"
+      "id_filiere": "2",
+      "statut": "en_cours"
     },
     {
       "id": "7",
       "libelle": "L3 Info",
       "id_niveau": "3",
-      "id_filiere": "1"
+      "id_filiere": "1",
+      "statut": "archiver"
     },
     {
       "id": "8",
       "libelle": "L2 Dev",
       "id_niveau": "2",
-      "id_filiere": "3"
+      "id_filiere": "3",
+      "statut": "en_cours"
     },
     {
       "id": "9",
       "libelle": "L1 GL",
       "id_niveau": "1",
-      "id_filiere": "4"
+      "id_filiere": "4",
+      "statut": "archiver"
     },
     {
+      "id": "10",
       "libelle": "L1 Dev",
       "id_niveau": "1",
       "id_filiere": "3",
-      "id": "10"
+      "statut": "en_cours"
     },
     {
       "id": "11",
       "libelle": "M1 Dev",
       "id_niveau": "3",
-      "id_filiere": "3"
+      "id_filiere": "3",
+      "statut": "en_cours"
     }
   ],
   "classes_professeur": [
     {
+      "id": "1",
       "id_classe": 1,
       "id_professeur": 1,
       "date_affectation": "2023-09-01",
-      "est_principal": 1,
-      "id": "33f5"
+      "est_principal": 1
     },
     {
+      "id": "2",
       "id_classe": 1,
       "id_professeur": 2,
       "date_affectation": "2023-09-01",
-      "est_principal": 0,
-      "id": "a0e5"
+      "est_principal": 0
     },
     {
+      "id": "3",
       "id_classe": 2,
       "id_professeur": 1,
       "date_affectation": "2023-09-01",
-      "est_principal": 1,
-      "id": "3b6a"
+      "est_principal": 1
     },
     {
+      "id": "4",
       "id_classe": 3,
       "id_professeur": 2,
       "date_affectation": "2023-09-01",
-      "est_principal": 1,
-      "id": "5492"
+      "est_principal": 1
+    },
+    {
+      "id": "5",
+      "id_classe": 2,
+      "id_professeur": "5",
+      "date_affectation": "2025-04-17",
+      "est_principal": 0
+    },
+    {
+      "id": "6",
+      "id_classe": 6,
+      "id_professeur": "5",
+      "date_affectation": "2025-04-17",
+      "est_principal": 0
+    },
+    {
+      "id": "7",
+      "id_classe": 8,
+      "id_professeur": "5",
+      "date_affectation": "2025-04-17",
+      "est_principal": 0
+    },
+    {
+      "id": "8",
+      "id_professeur": "12",
+      "date_affectation": "2025-04-18",
+      "est_principal": 0,
+      "id_classe": "2"
+    },
+    {
+      "id": "9",
+      "id_professeur": "12",
+      "date_affectation": "2025-04-18",
+      "est_principal": 0,
+      "id_classe": "4"
+    },
+    {
+      "id": "10",
+      "id_professeur": "12",
+      "date_affectation": "2025-04-18",
+      "est_principal": 0,
+      "id_classe": "7"
+    },
+    {
+      "id": "11",
+      "id_classe": "2",
+      "id_professeur": "10",
+      "date_affectation": "2025-04-18",
+      "est_principal": 0
+    },
+    {
+      "id": "12",
+      "id_classe": "6",
+      "id_professeur": "10",
+      "date_affectation": "2025-04-18",
+      "est_principal": 0
+    },
+    {
+      "id": "13",
+      "id_classe": "10",
+      "id_professeur": "10",
+      "date_affectation": "2025-04-18",
+      "est_principal": 0
+    },
+    {
+      "id": "14",
+      "id_classe": "3",
+      "id_professeur": "4",
+      "date_affectation": "2025-04-18",
+      "est_principal": 0
+    },
+    {
+      "id": "15",
+      "id_classe": "11",
+      "id_professeur": "4",
+      "date_affectation": "2025-04-18",
+      "est_principal": 0
+    },
+    {
+      "id": "16",
+      "id_classe": "4",
+      "id_professeur": "3",
+      "date_affectation": "2025-04-18",
+      "est_principal": 0
+    },
+    {
+      "id": "17",
+      "id_classe": "6",
+      "id_professeur": "3",
+      "date_affectation": "2025-04-18",
+      "est_principal": 0
     }
   ],
   "cours": [
     {
-      "id_cours": 1,
+      "id": 1,
       "id_module": 1,
       "id_professeur": 1,
       "id_semestre": 1,
@@ -125,11 +225,10 @@
       "nombre_heures": 2,
       "salle": "Salle A1",
       "statut": "planifié",
-      "date_creation": "2025-03-29 15:59:04",
-      "id": "5374"
+      "date_creation": "2025-03-29 15:59:04"
     },
     {
-      "id_cours": 2,
+      "id": 2,
       "id_module": 1,
       "id_professeur": 1,
       "id_semestre": 1,
@@ -139,11 +238,10 @@
       "nombre_heures": 2,
       "salle": "Salle A1",
       "statut": "planifié",
-      "date_creation": "2025-03-29 15:59:04",
-      "id": "a133"
+      "date_creation": "2025-03-29 15:59:04"
     },
     {
-      "id_cours": 3,
+      "id": 3,
       "id_module": 3,
       "id_professeur": 2,
       "id_semestre": 1,
@@ -153,25 +251,39 @@
       "nombre_heures": 2,
       "salle": "Salle B2",
       "statut": "planifié",
-      "date_creation": "2025-03-29 15:59:04",
-      "id": "38e0"
+      "date_creation": "2025-03-29 15:59:04"
     }
   ],
   "cours_classes": [
     {
+      "id": "1",
       "id_cours": 1,
-      "id_classe": 1,
-      "id": "94e6"
+      "id_classe": 2
     },
     {
+      "id": "2",
       "id_cours": 2,
-      "id_classe": 1,
-      "id": "3b48"
+      "id_classe": 2
     },
     {
+      "id": "3",
+      "id_cours": 2,
+      "id_classe": 3
+    },
+    {
+      "id": "4",
       "id_cours": 3,
-      "id_classe": 3,
-      "id": "4c7c"
+      "id_classe": 4
+    },
+    {
+      "id": "5",
+      "id_cours": 1,
+      "id_classe": 6
+    },
+    {
+      "id": "6",
+      "id_cours": 2,
+      "id_classe": 4
     }
   ],
   "etudiants": [
@@ -180,39 +292,43 @@
       "id_utilisateur": 5,
       "matricule": "ET20230001",
       "date_inscription": "2023-09-01",
-      "id": "5711"
+      "id": "8ae8"
     },
     {
       "id_etudiant": 2,
       "id_utilisateur": 6,
       "matricule": "ET20230002",
       "date_inscription": "2023-09-01",
-      "id": "5fe7"
+      "id": "db52"
     },
     {
       "id_etudiant": 3,
       "id_utilisateur": 7,
       "matricule": "ET20230003",
       "date_inscription": "2023-09-01",
-      "id": "7b09"
+      "id": "98cb"
     }
   ],
   "filieres": [
     {
       "id_filiere": "1",
-      "libelle": "Informatique"
+      "libelle": "Informatique",
+      "id": "a3c3"
     },
     {
       "id_filiere": "2",
-      "libelle": "Mathématiques"
+      "libelle": "Mathématiques",
+      "id": "5c55"
     },
     {
       "id_filiere": "3",
-      "libelle": "Développement"
+      "libelle": "Développement",
+      "id": "275c"
     },
     {
       "id_filiere": "4",
-      "libelle": "Génie Logiciel"
+      "libelle": "Génie Logiciel",
+      "id": "f651"
     }
   ],
   "inscriptions": [
@@ -220,21 +336,21 @@
       "id_inscription": 1,
       "id_etudiant": 1,
       "id_classe": 1,
-      "annee_scolaire": "2023-2024",
-      "date_inscription": "2023-09-01",
+      "annee_scolaire": "2024-2025",
+      "date_inscription": "2024-09-01",
       "est_reinscription": 0,
       "statut": "validée",
-      "id": "b0ac"
+      "id": "7197"
     },
     {
       "id_inscription": 2,
       "id_etudiant": 2,
       "id_classe": 1,
-      "annee_scolaire": "2023-2024",
-      "date_inscription": "2023-09-01",
+      "annee_scolaire": "2024-2025",
+      "date_inscription": "2024-09-05",
       "est_reinscription": 0,
       "statut": "validée",
-      "id": "c941"
+      "id": "e68e"
     },
     {
       "id_inscription": 3,
@@ -244,7 +360,7 @@
       "date_inscription": "2023-09-02",
       "est_reinscription": 0,
       "statut": "validée",
-      "id": "bb7d"
+      "id": "14bc"
     }
   ],
   "justifications": [
@@ -264,70 +380,124 @@
   ],
   "modules": [
     {
-      "id_module": 1,
+      "id": 1,
       "libelle": "Programmation Java",
       "code_module": "INF101",
-      "description": null,
       "id_filiere": 1,
       "id_niveau": 1,
-      "nombre_heures_total": 60,
-      "id": "8d07"
+      "nombre_heures_total": 60
     },
     {
-      "id_module": 2,
+      "id": 2,
       "libelle": "Base de données",
       "code_module": "INF201",
-      "description": null,
       "id_filiere": 1,
       "id_niveau": 2,
-      "nombre_heures_total": 45,
-      "id": "ba94"
+      "nombre_heures_total": 45
     },
     {
-      "id_module": 3,
+      "id": 3,
       "libelle": "Algèbre linéaire",
       "code_module": "MAT101",
-      "description": null,
       "id_filiere": 2,
       "id_niveau": 1,
-      "nombre_heures_total": 50,
-      "id": "2e74"
+      "nombre_heures_total": 50
     }
   ],
   "niveaux": [
     {
       "id_niveau": 1,
-      "libelle": "Licence 1"
+      "libelle": "Licence 1",
+      "id": "5bd4"
     },
     {
       "id_niveau": 2,
-      "libelle": "Licence 2"
+      "libelle": "Licence 2",
+      "id": "e39e"
     },
     {
       "id_niveau": 3,
-      "libelle": "Licence 3"
+      "libelle": "Licence 3",
+      "id": "6248"
     },
     {
       "id_niveau": 3,
-      "libelle": "Master 1"
+      "libelle": "Master 1",
+      "id": "7067"
     }
   ],
   "professeurs": [
     {
-      "id_professeur": 1,
+      "id": "1",
       "id_utilisateur": 2,
       "specialite": "Informatique",
       "grade": "Professeur",
       "date_embauche": "2020-09-01",
-      "id": "6503"
+      "statut": "archiver"
     },
     {
-      "id_professeur": 2,
+      "id": "2",
       "id_utilisateur": 3,
       "specialite": "Mathématiques",
       "grade": "Maître Assistant",
       "date_embauche": "2021-10-15",
-      "id": "42a2"
+      "statut": "archiver"
+    },
+    {
+      "id": "3",
+      "id_utilisateur": "8",
+      "specialite": "Chimie",
+      "grade": "Docteur",
+      "date_embauche": "2021-10-15",
+      "statut": "archiver"
+    },
+    {
+      "id": "4",
+      "id_utilisateur": "9",
+      "specialite": "Littérature",
+      "grade": "Docteur",
+      "date_embauche": "2025-04-17",
+      "statut": "archiver"
+    },
+    {
+      "id": "5",
+      "id_utilisateur": "10",
+      "specialite": "Littérature",
+      "grade": "Docteur",
+      "date_embauche": "2025-04-17",
+      "statut": "actif"
+    },
+    {
+      "id": "6",
+      "id_utilisateur": "11",
+      "specialite": "Chimie",
+      "grade": "Docteur",
+      "date_embauche": "2025-04-18",
+      "statut": "actif"
+    },
+    {
+      "id": "7",
+      "id_utilisateur": "12",
+      "specialite": "Informatique",
+      "grade": "Docteur",
+      "date_embauche": "2025-04-18",
+      "statut": "archiver"
+    },
+    {
+      "id": "8",
+      "id_utilisateur": "13",
+      "specialite": "Chimie",
+      "grade": "Docteur",
+      "date_embauche": "2025-04-18",
+      "statut": "actif"
+    },
+    {
+      "id": "9",
+      "id_utilisateur": "14",
+      "specialite": "Chimie",
+      "grade": "Docteur",
+      "date_embauche": "2025-04-18",
+      "statut": "archiver"
     }
   ],
   "responsables_pedagogiques": [
@@ -380,7 +550,7 @@
   ],
   "utilisateurs": [
     {
-      "id_utilisateur": 1,
+      "id": "1",
       "nom": "Ndiaye",
       "prenom": "Aminata",
       "email": "rp@ecole221.com",
@@ -388,23 +558,20 @@
       "id_role": 1,
       "avatar": "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=600",
       "telephone": "771234567",
-      "adresse": "yeumbeul,comico",
-      "id": "4847"
+      "adresse": "yeumbeul,comico"
     },
     {
-      "id_utilisateur": 2,
+      "id": "2",
       "nom": "Sow",
       "prenom": "Moussa",
       "email": "m.sow@ecole221.com",
-      "password": "password123",
+      "password": "passer123",
       "id_role": 2,
-      "avatar": "profiles/prof_moussa.jpg",
       "telephone": "772345678",
-      "adresse": "yeumbeul,comico",
-      "id": "fa73"
+      "adresse": "yeumbeul"
     },
     {
-      "id_utilisateur": 3,
+      "id": "3",
       "nom": "Diallo",
       "prenom": "Fatou",
       "email": "f.diallo@ecole221.com",
@@ -412,11 +579,10 @@
       "id_role": 2,
       "avatar": "profiles/prof_fatou.jpg",
       "telephone": "773456789",
-      "adresse": "yeumbeul,comico",
-      "id": "a51c"
+      "adresse": "yeumbeul,comico"
     },
     {
-      "id_utilisateur": 4,
+      "id": "4",
       "nom": "Kane",
       "prenom": "Ibrahima",
       "email": "attache@ecole221.com",
@@ -424,35 +590,30 @@
       "id_role": 3,
       "avatar": "profiles/attache_ibrahima.jpg",
       "telephone": "774567890",
-      "adresse": "yeumbeul,comico",
-      "id": "de11"
+      "adresse": "yeumbeul,comico"
     },
     {
-      "id_utilisateur": 5,
-      "nom": "Fall",
-      "prenom": "Aïcha",
-      "email": "a.fall@ecole221.com",
-      "password": "Etud1pass",
-      "id_role": 4,
-      "avatar": "profiles/etud_aicha.jpg",
-      "telephone": "775678901",
-      "adresse": "yeumbeul,comico",
-      "id": "4356"
+      "nom": "Thiam",
+      "prenom": "Fatima",
+      "email": "fatima@gmail.com",
+      "password": "passer123",
+      "id_role": 2,
+      "telephone": "774563112",
+      "adresse": "Medina",
+      "id": "5"
     },
     {
-      "id_utilisateur": 6,
-      "nom": "Diop",
-      "prenom": "Mamadou",
-      "email": "m.diop@ecole221.com",
-      "password": "Etud2pass",
-      "id_role": 4,
-      "avatar": "profiles/etud_mamadou.jpg",
-      "telephone": "776789012",
-      "adresse": "yeumbeul,comico",
-      "id": "3520"
+      "nom": "Biteye",
+      "prenom": "Fatoumata",
+      "email": "fatima1@gmail.com",
+      "password": "passer123",
+      "id_role": 2,
+      "telephone": "778889995",
+      "adresse": "kaolack",
+      "id": "6"
     },
     {
-      "id_utilisateur": 7,
+      "id": "7",
       "nom": "Gueye",
       "prenom": "Rokhaya",
       "email": "r.gueye@ecole221.com",
@@ -460,8 +621,77 @@
       "id_role": 4,
       "avatar": "profiles/etud_rokhaya.jpg",
       "telephone": "777890123",
-      "adresse": "yeumbeul,comico",
-      "id": "d0dc"
+      "adresse": "yeumbeul,comico"
+    },
+    {
+      "nom": "Biteye",
+      "prenom": "Moustapha",
+      "email": "moustapha@gmail.com",
+      "password": "passer123",
+      "id_role": 2,
+      "telephone": "778889995",
+      "adresse": "kaolack",
+      "id": "8"
+    },
+    {
+      "id": "9",
+      "nom": "Ndiaye",
+      "prenom": "Abdou",
+      "email": "abdou@gmail.com",
+      "password": "passer122",
+      "id_role": 2,
+      "telephone": "12369741",
+      "adresse": "Parcelles"
+    },
+    {
+      "id": "10",
+      "nom": "Niang",
+      "prenom": "Fatima",
+      "email": "fatima@gmail.com",
+      "password": "passer123",
+      "id_role": 2,
+      "telephone": "774563112",
+      "adresse": "Medina"
+    },
+    {
+      "id": "11",
+      "nom": "Biteye",
+      "prenom": "Fatima",
+      "email": "fatima1@gmail.com",
+      "password": "passer123",
+      "id_role": 2,
+      "telephone": "778889995",
+      "adresse": "kaolack"
+    },
+    {
+      "id": "12",
+      "nom": "Thiam",
+      "prenom": "Aliou",
+      "email": "aliouthiam@gmail.com",
+      "password": "passer123",
+      "id_role": 2,
+      "telephone": "778889995",
+      "adresse": "kaolack"
+    },
+    {
+      "id": "13",
+      "nom": "Biteye",
+      "prenom": "Mamadou",
+      "email": "bamadouniass8@gmail.com",
+      "password": "passer123",
+      "id_role": 2,
+      "telephone": "778889995",
+      "adresse": "kaolack"
+    },
+    {
+      "id": "14",
+      "nom": "Biteye",
+      "prenom": "Amina",
+      "email": "demba77@gmail.com",
+      "password": "passer123",
+      "id_role": 2,
+      "telephone": "77888999",
+      "adresse": "kaolack"
     }
   ]
 }

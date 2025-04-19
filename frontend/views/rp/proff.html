@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proffesseurs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script type="module" src="../../assets/javascript/rp/proff.js" defer></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 body">
+    <div class="overlay fixed w-screen bg-black bg-opacity-50 h-screen hidden z-10"></div>
+    <div class="flex min-h-screen items-start">
+        <!-- Sidebar -->
+        <div id="sidebar"
+            class="w-64 min-h-screen bg-gradient-to-b from-red-500 to-pink-600 text-white p-6 rounded-r-3xl flex flex-col justify-between">
+            <!-- contenu sidebar ici -->
+        </div>
+        <!-- Main Content -->
+        <div class="flex-1 ">
+            <!-- Topbar -->
+            <header id="topbar" class="bg-white shadow p-4 flex justify-between items-center rounded-bl-3xl">
+                <!-- contenu topbar ici -->
+            </header>
+            <div class="bg-white shadow p-4 flex justify-between items-center rounded-bl-3xl rounded-tr-3xl m-6">
+                <h1 class="text-xl font-semibold">Proffesseurs</h1>
+                <div class="flex items-center space-x-4">
+                <!-- Filtre Niveau -->
+                <select name="filtreSpecialite" id="filtreSpecialite"
+                class="specialite mt-1 block  px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500">
+                <!-- les options ici -->
+                </select>
+            
+                <!-- Filtre Filière -->
+                <!-- <select name="filiere" id="filterFiliere"
+                class="filiere mt-1 block  px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500">
+                </select> -->
+                    <button id="add"
+                        class="bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700 flex items-center space-x-2">
+                        <i class="ri-user-add-line"></i>
+                        <span>Ajouter classe</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <main class="p-6">
+                <!--  -->
+                <div id="proff" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!--  cartes -->
+
+                </div>
+            </main>
+            <div id="pagination" class="flex justify-center space-x-2 mt-4"></div>
+        </div>
+    </div>
+        <!-- formulaire -->
+        <div id="formPopup" class="max-w-[35rem] w-full bg-white p-8 rounded-lg shadow-md absolute top-20 left-1/2 -translate-x-1/2 z-50 hidden">
+            <h2 class="text-2xl font-semibold mb-4">Ajouter proffesseur</h2>
+            <form id="formClasse" action="#" method="POST" class="grid grid-cols-2 gap-2">
+                <div class="mb-4">
+                    <label for="first_name" class="block text-sm font-medium text-gray-700">Nom</label>
+                    <input type="text" id="nom" name="nom"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500"
+                    >
+                    <p class="text-red-500" id="nomError"></p>
+                </div>
+                <div class="mb-4">
+                    <label for="first_name" class="block text-sm font-medium text-gray-700">Prénom</label>
+                    <input type="text" id="prenom" name="prenom"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500"
+                    >
+                    <p class="text-red-500" id="prenomError"></p>
+                </div>
+                <div class="mb-4">
+                    <label for="first_name" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="text" id="email" name="email"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500"
+                    >
+                    <p class="text-red-500" id="emailError"></p>
+                </div>
+                <div class="mb-4">
+                    <label for="first_name" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="text" id="pass" name="pass"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500"
+                    >
+                    <p class="text-red-500" id="passError"></p>
+                </div>
+                <div class="mb-4">
+                    <label for="first_name" class="block text-sm font-medium text-gray-700">Grade</label>
+                    <input type="text" id="grade" name="grade"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500"
+                    >
+                    <p class="text-red-500" id="gradeError"></p>
+                </div>
+                <div class="mb-4">
+                    <label for="first_name" class="block text-sm font-medium text-gray-700">Spécialité</label>
+                    <input type="text" id="specialite" name="specialite"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500"
+                    >
+                    <p class="text-red-500" id="specialiteError"></p>
+                </div>
+                <div class="mb-4">
+                    <label for="first_name" class="block text-sm font-medium text-gray-700">Adresse</label>
+                    <input type="text" id="adresse" name="adresse"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500"
+                    >
+                    <p class="text-red-500" id="adresseError"></p>
+                </div>
+                <div class="mb-4">
+                    <label for="first_name" class="block text-sm font-medium text-gray-700">Téléphone</label>
+                    <input type="text" id="telephone" name="telephone"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500"
+                    >
+                    <p class="text-red-500" id="telephoneError"></p>
+                </div>
+                <div class="mb-4 col-span-2">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Classes à affecter</label>
+                    <div id="checkboxClasses" class="grid grid-cols-4 gap-2">
+                        <!-- Les checkboxes seront insérées ici -->
+                    </div>
+                    <p class="text-red-500" id="classesError"></p>
+                </div>                
+                <button id="submitBtn" type="submit"
+                    class="w-full bg-pink-600 text-white py-2 rounded-lg hover:bg-pink-700">Ajouter</button>
+            </form>
+            
+        </div>  
+        <!-- confirmation suppression -->
+        <div id="confirmPopup" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+            <div class="bg-white p-6 rounded shadow-xl text-center space-y-4">
+              <p class="text-lg">Voulez-vous vraiment archiver cette classe ?</p>
+              <div class="flex justify-center gap-4">
+                <button id="confirmDelete" class="bg-red-500 text-white px-4 py-2 rounded">Oui</button>
+                <button id="cancelDelete" class="bg-gray-300 px-4 py-2 rounded">Non</button>
+              </div>
+            </div>
+          </div>
+          
+
+
+</body>
+
+</html>
